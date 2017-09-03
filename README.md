@@ -14,7 +14,7 @@ Features:
 
 Developed in C# using WinForm works in Windows and Linux too (using mono)  
 
-Install:
+**Install:**  
 Download [latest binaries](https://github.com/Effer/img2pok/blob/master/Binaries/Latest.zip)  
 unzip on a folder and then:  
   
