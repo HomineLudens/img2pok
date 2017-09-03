@@ -13,6 +13,10 @@ Features:
 * Import/Export palette as json
 
 Developed in C# using WinForm works in Windows and Linux too (using mono)  
+
+Install:
+Download [latest binaries](https://github.com/Effer/img2pok/blob/master/Binaries/Latest.zip)  
+unzip on a folder and then:  
   
 **Windows:**  
 Double click on executable  
