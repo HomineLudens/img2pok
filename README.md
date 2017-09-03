@@ -10,6 +10,7 @@ Features:
 * Extract palette from image (experimental, using simple color distance)
 * Editable palette (add/remove/edit colors, drag and drop to change order)
 * Split image in multiple tiles
+* Import/Export palette as json
 
 Developed in C# using WinForm works in Windows and Linux too (using mono)  
   
