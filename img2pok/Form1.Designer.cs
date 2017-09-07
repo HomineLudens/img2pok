@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.loadImg = new System.Windows.Forms.Button();
+            this.bntLoadImg = new System.Windows.Forms.Button();
             this.pbOriginal = new System.Windows.Forms.PictureBox();
             this.rtbOut = new System.Windows.Forms.RichTextBox();
             this.cmsRtbOuput = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -56,11 +56,13 @@
             this.numRow = new System.Windows.Forms.NumericUpDown();
             this.btnExtractPaletteAll = new System.Windows.Forms.Button();
             this.toolTipInfo = new System.Windows.Forms.ToolTip(this.components);
+            this.btnReloadImage = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             ((System.ComponentModel.ISupportInitialize)(this.pbOriginal)).BeginInit();
             this.cmsRtbOuput.SuspendLayout();
             this.gbBitMode.SuspendLayout();
@@ -72,20 +74,21 @@
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
+            this.tableLayoutPanel4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // loadImg
+            // bntLoadImg
             // 
-            this.loadImg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.loadImg.Location = new System.Drawing.Point(3, 2);
-            this.loadImg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.loadImg.Name = "loadImg";
-            this.loadImg.Size = new System.Drawing.Size(507, 61);
-            this.loadImg.TabIndex = 0;
-            this.loadImg.Text = "Load Image..";
-            this.toolTipInfo.SetToolTip(this.loadImg, "Load original image");
-            this.loadImg.UseVisualStyleBackColor = true;
-            this.loadImg.Click += new System.EventHandler(this.loadImg_Click);
+            this.bntLoadImg.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bntLoadImg.Location = new System.Drawing.Point(3, 2);
+            this.bntLoadImg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.bntLoadImg.Name = "bntLoadImg";
+            this.bntLoadImg.Size = new System.Drawing.Size(247, 55);
+            this.bntLoadImg.TabIndex = 0;
+            this.bntLoadImg.Text = "Load Image..";
+            this.toolTipInfo.SetToolTip(this.bntLoadImg, "Load original image");
+            this.bntLoadImg.UseVisualStyleBackColor = true;
+            this.bntLoadImg.Click += new System.EventHandler(this.btnLoadImg_Click);
             // 
             // pbOriginal
             // 
@@ -388,17 +391,30 @@
             this.btnExtractPaletteAll.UseVisualStyleBackColor = true;
             this.btnExtractPaletteAll.Click += new System.EventHandler(this.btnExtractPaletteAll_Click);
             // 
+            // btnReloadImage
+            // 
+            this.btnReloadImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnReloadImage.Location = new System.Drawing.Point(256, 2);
+            this.btnReloadImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnReloadImage.Name = "btnReloadImage";
+            this.btnReloadImage.Size = new System.Drawing.Size(248, 55);
+            this.btnReloadImage.TabIndex = 1;
+            this.btnReloadImage.Text = "Reload Image";
+            this.toolTipInfo.SetToolTip(this.btnReloadImage, "Reload image from disk");
+            this.btnReloadImage.UseVisualStyleBackColor = true;
+            this.btnReloadImage.Click += new System.EventHandler(this.btnReloadImage_Click);
+            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.loadImg, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.pbIndexed, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.pbOriginal, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.rtbOut, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel3, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel4, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -479,6 +495,21 @@
             this.label2.TabIndex = 17;
             this.label2.Text = "Rows";
             // 
+            // tableLayoutPanel4
+            // 
+            this.tableLayoutPanel4.ColumnCount = 2;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Controls.Add(this.btnReloadImage, 1, 0);
+            this.tableLayoutPanel4.Controls.Add(this.bntLoadImg, 0, 0);
+            this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.tableLayoutPanel4.Name = "tableLayoutPanel4";
+            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(507, 59);
+            this.tableLayoutPanel4.TabIndex = 21;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -504,13 +535,14 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
+            this.tableLayoutPanel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button loadImg;
+        private System.Windows.Forms.Button bntLoadImg;
         private System.Windows.Forms.PictureBox pbOriginal;
         private System.Windows.Forms.RichTextBox rtbOut;
         private System.Windows.Forms.GroupBox gbBitMode;
@@ -541,6 +573,8 @@
         private System.Windows.Forms.ToolStripMenuItem modifyToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem deleteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
+        private System.Windows.Forms.Button btnReloadImage;
     }
 }
 

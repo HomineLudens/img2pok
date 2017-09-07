@@ -21,29 +21,40 @@ namespace img2pok
         public Form1()
         {
             InitializeComponent();
-            this.Text = "img2pok V0.4";
+            this.Text = "img2pok V0.5";
         }
 
-        private void loadImg_Click(object sender, EventArgs e)
+        private void LoadImage()
+        {
+            try
+            {
+                using (Image img = Image.FromFile(imgPath))
+                {
+                    pbOriginal.Image = new Bitmap(img);
+                }
+                ProcessImage();
+            }
+            catch
+            {
+                rtbOut.Text = "Error reading file";
+            }
+        }
+
+        private void btnLoadImg_Click(object sender, EventArgs e)
         {
             using (OpenFileDialog ofd = new OpenFileDialog())
             {
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
-                    try
-                    {
-                        imgPath = ofd.FileName;
-                        using (Image img = Image.FromFile(imgPath))
-                        { 
-                            pbOriginal.Image = new Bitmap(img);
-                        }
-                    }
-                    catch
-                    {
-                        rtbOut.Text = "Error reading file";
-                    }
+                    imgPath = ofd.FileName;
+                    LoadImage();
                 }
             }
+        }       
+
+        private void btnReloadImage_Click(object sender, EventArgs e)
+        {
+            LoadImage();
         }
 
         private void ProcessImage()
@@ -540,5 +551,6 @@ namespace img2pok
 
             }
         }
+       
     }
 }
