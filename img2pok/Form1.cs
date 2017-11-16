@@ -21,7 +21,7 @@ namespace img2pok
         public Form1()
         {
             InitializeComponent();
-            this.Text = "img2pok V0.5";
+            this.Text = "img2pok V0.6";
         }
 
         private void LoadImage()
@@ -261,6 +261,7 @@ namespace img2pok
 
             //Calc offset
             int offSet = 8 / numBit;
+            offSet = offSet > 0 ? offSet : 1;
             //line by line
             for (int y = 0; y < height; y++)
             {
@@ -355,6 +356,11 @@ namespace img2pok
             int dg = (a.G - b.G);
             int db = (a.B - b.B);
             return (dr * dr + dg * dg + db * db);
+        }
+
+        private void rb16_CheckedChanged(object sender, EventArgs e)
+        {
+            ChangeNumBit(sender, 16);
         }
 
         private void rb4_CheckedChanged(object sender, EventArgs e)
@@ -551,6 +557,7 @@ namespace img2pok
 
             }
         }
+
        
     }
 }

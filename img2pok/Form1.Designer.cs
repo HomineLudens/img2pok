@@ -63,6 +63,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.rb16 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbOriginal)).BeginInit();
             this.cmsRtbOuput.SuspendLayout();
             this.gbBitMode.SuspendLayout();
@@ -140,6 +141,7 @@
             // 
             // gbBitMode
             // 
+            this.gbBitMode.Controls.Add(this.rb16);
             this.gbBitMode.Controls.Add(this.rb1);
             this.gbBitMode.Controls.Add(this.rb2);
             this.gbBitMode.Controls.Add(this.rb4);
@@ -158,7 +160,7 @@
             // rb1
             // 
             this.rb1.AutoSize = true;
-            this.rb1.Location = new System.Drawing.Point(5, 75);
+            this.rb1.Location = new System.Drawing.Point(6, 101);
             this.rb1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rb1.Name = "rb1";
             this.rb1.Size = new System.Drawing.Size(138, 21);
@@ -170,7 +172,7 @@
             // rb2
             // 
             this.rb2.AutoSize = true;
-            this.rb2.Location = new System.Drawing.Point(5, 48);
+            this.rb2.Location = new System.Drawing.Point(6, 74);
             this.rb2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rb2.Name = "rb2";
             this.rb2.Size = new System.Drawing.Size(138, 21);
@@ -183,12 +185,11 @@
             // 
             this.rb4.AutoSize = true;
             this.rb4.Checked = true;
-            this.rb4.Location = new System.Drawing.Point(5, 21);
+            this.rb4.Location = new System.Drawing.Point(6, 47);
             this.rb4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rb4.Name = "rb4";
             this.rb4.Size = new System.Drawing.Size(146, 21);
             this.rb4.TabIndex = 7;
-            this.rb4.TabStop = true;
             this.rb4.Text = "4bit (max 16 color)";
             this.rb4.UseVisualStyleBackColor = true;
             this.rb4.CheckedChanged += new System.EventHandler(this.rb4_CheckedChanged);
@@ -510,6 +511,18 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(507, 59);
             this.tableLayoutPanel4.TabIndex = 21;
             // 
+            // rb16
+            // 
+            this.rb16.AutoSize = true;
+            this.rb16.Location = new System.Drawing.Point(6, 22);
+            this.rb16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rb16.Name = "rb16";
+            this.rb16.Size = new System.Drawing.Size(154, 21);
+            this.rb16.TabIndex = 8;
+            this.rb16.Text = "8bit (max 256 color)";
+            this.rb16.UseVisualStyleBackColor = true;
+            this.rb16.CheckedChanged += new System.EventHandler(this.rb16_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -575,6 +588,7 @@
         private System.Windows.Forms.ToolStripMenuItem addToolStripMenuItem;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Button btnReloadImage;
+        private System.Windows.Forms.RadioButton rb16;
     }
 }
 
