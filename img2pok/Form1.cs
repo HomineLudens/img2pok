@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,7 +22,7 @@ namespace img2pok
         public Form1()
         {
             InitializeComponent();
-            this.Text = "img2pok V0.6";
+            this.Text = "img2pok V" + Assembly.GetExecutingAssembly().GetName().Version.ToString();
         }
 
         private void LoadImage()
@@ -94,6 +95,7 @@ namespace img2pok
                             int wc = (int)(bmpIndexed.Width / numColumns.Value);
                             int hc = (int)(bmpIndexed.Height / numRow.Value);
                             int index = 0;
+
                             int size = 2 + (hc * (wc / (8 / numBit)));
                             OutputC += "//Sprite sheet:" + numColumns.Value + "x" + numRow.Value + "\r\n";
                             OutputC += "const uint8_t sprites [][" + size + "] ={\r\n";
@@ -261,7 +263,6 @@ namespace img2pok
 
             //Calc offset
             int offSet = 8 / numBit;
-            offSet = offSet > 0 ? offSet : 1;
             //line by line
             for (int y = 0; y < height; y++)
             {
@@ -360,7 +361,7 @@ namespace img2pok
 
         private void rb16_CheckedChanged(object sender, EventArgs e)
         {
-            ChangeNumBit(sender, 16);
+            ChangeNumBit(sender, 8);
         }
 
         private void rb4_CheckedChanged(object sender, EventArgs e)
@@ -428,7 +429,6 @@ namespace img2pok
                     try
                     {
                         var extBmp = (Bitmap)Image.FromFile(ofd.FileName);
-                        //palette = ExtractBestPalette(extBmp, (int)Math.Pow(2, numBit));
                         palette = ExtractFullPalette(extBmp);
                         PopulatePaletteListBox();
                         ProcessImage();

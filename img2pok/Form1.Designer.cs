@@ -37,6 +37,7 @@
             this.copyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clearToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbBitMode = new System.Windows.Forms.GroupBox();
+            this.rb16 = new System.Windows.Forms.RadioButton();
             this.rb1 = new System.Windows.Forms.RadioButton();
             this.rb2 = new System.Windows.Forms.RadioButton();
             this.rb4 = new System.Windows.Forms.RadioButton();
@@ -63,7 +64,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
-            this.rb16 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pbOriginal)).BeginInit();
             this.cmsRtbOuput.SuspendLayout();
             this.gbBitMode.SuspendLayout();
@@ -157,6 +157,18 @@
             this.gbBitMode.Text = "Bit Mode";
             this.toolTipInfo.SetToolTip(this.gbBitMode, "Select render mode for pokitto");
             // 
+            // rb16
+            // 
+            this.rb16.AutoSize = true;
+            this.rb16.Location = new System.Drawing.Point(6, 22);
+            this.rb16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.rb16.Name = "rb16";
+            this.rb16.Size = new System.Drawing.Size(154, 21);
+            this.rb16.TabIndex = 8;
+            this.rb16.Text = "8bit (max 256 color)";
+            this.rb16.UseVisualStyleBackColor = true;
+            this.rb16.CheckedChanged += new System.EventHandler(this.rb16_CheckedChanged);
+            // 
             // rb1
             // 
             this.rb1.AutoSize = true;
@@ -190,6 +202,7 @@
             this.rb4.Name = "rb4";
             this.rb4.Size = new System.Drawing.Size(146, 21);
             this.rb4.TabIndex = 7;
+            this.rb4.TabStop = true;
             this.rb4.Text = "4bit (max 16 color)";
             this.rb4.UseVisualStyleBackColor = true;
             this.rb4.CheckedChanged += new System.EventHandler(this.rb4_CheckedChanged);
@@ -510,18 +523,6 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(507, 59);
             this.tableLayoutPanel4.TabIndex = 21;
-            // 
-            // rb16
-            // 
-            this.rb16.AutoSize = true;
-            this.rb16.Location = new System.Drawing.Point(6, 22);
-            this.rb16.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.rb16.Name = "rb16";
-            this.rb16.Size = new System.Drawing.Size(154, 21);
-            this.rb16.TabIndex = 8;
-            this.rb16.Text = "8bit (max 256 color)";
-            this.rb16.UseVisualStyleBackColor = true;
-            this.rb16.CheckedChanged += new System.EventHandler(this.rb16_CheckedChanged);
             // 
             // Form1
             // 
