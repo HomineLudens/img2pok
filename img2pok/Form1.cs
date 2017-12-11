@@ -48,10 +48,11 @@ namespace img2pok
                 if (ofd.ShowDialog() == DialogResult.OK)
                 {
                     imgPath = ofd.FileName;
+                    tbSpriteName.Text = Path.GetFileNameWithoutExtension(ofd.FileName);
                     LoadImage();
                 }
             }
-        }       
+        }
 
         private void btnReloadImage_Click(object sender, EventArgs e)
         {
@@ -83,9 +84,13 @@ namespace img2pok
                     //Scan image and extract indexed pixels
                     int[,] pixels = scanImage((Bitmap)pbIndexed.Image, palette);
 
+                    string sSpriteName = "sprite";
+                    if (!string.IsNullOrWhiteSpace(tbSpriteName.Text))
+                        sSpriteName = tbSpriteName.Text.Trim();
+
                     //Create sub images
                     string OutputC = "";
-                    OutputC += buildCFilePalette("sprite", palette);
+                    OutputC += buildCFilePalette(sSpriteName, palette);
 
                     if (numColumns.Value > 1 || numRow.Value > 1)
                     {
@@ -96,9 +101,10 @@ namespace img2pok
                             int hc = (int)(bmpIndexed.Height / numRow.Value);
                             int index = 0;
 
+
                             int size = 2 + (hc * (wc / (8 / numBit)));
                             OutputC += "//Sprite sheet:" + numColumns.Value + "x" + numRow.Value + "\r\n";
-                            OutputC += "const uint8_t sprites [][" + size + "] ={\r\n";
+                            OutputC += "const uint8_t " + sSpriteName + " [][" + size + "] ={\r\n";
 
                             for (int y = 0; y < numRow.Value; y++)
                             {
@@ -126,7 +132,7 @@ namespace img2pok
                     else
                     {
                         //Single sprite                        
-                        OutputC += "const uint8_t sprite[] =\r\n";
+                        OutputC += "const uint8_t " + sSpriteName + "[] =\r\n";
                         OutputC += buildCFileSprites(bmpIndexed.Width, bmpIndexed.Height, palette, pixels) + ";\r\n";
                     }
 
@@ -558,6 +564,6 @@ namespace img2pok
             }
         }
 
-       
+
     }
 }

@@ -64,6 +64,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.tbSpriteName = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbOriginal)).BeginInit();
             this.cmsRtbOuput.SuspendLayout();
             this.gbBitMode.SuspendLayout();
@@ -84,7 +86,7 @@
             this.bntLoadImg.Location = new System.Drawing.Point(3, 2);
             this.bntLoadImg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bntLoadImg.Name = "bntLoadImg";
-            this.bntLoadImg.Size = new System.Drawing.Size(247, 55);
+            this.bntLoadImg.Size = new System.Drawing.Size(247, 38);
             this.bntLoadImg.TabIndex = 0;
             this.bntLoadImg.Text = "Load Image..";
             this.toolTipInfo.SetToolTip(this.bntLoadImg, "Load original image");
@@ -95,10 +97,10 @@
             // 
             this.pbOriginal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbOriginal.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbOriginal.Location = new System.Drawing.Point(3, 67);
+            this.pbOriginal.Location = new System.Drawing.Point(3, 92);
             this.pbOriginal.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbOriginal.Name = "pbOriginal";
-            this.pbOriginal.Size = new System.Drawing.Size(507, 228);
+            this.pbOriginal.Size = new System.Drawing.Size(507, 219);
             this.pbOriginal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbOriginal.TabIndex = 1;
             this.pbOriginal.TabStop = false;
@@ -108,10 +110,10 @@
             // 
             this.rtbOut.ContextMenuStrip = this.cmsRtbOuput;
             this.rtbOut.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbOut.Location = new System.Drawing.Point(516, 299);
+            this.rtbOut.Location = new System.Drawing.Point(516, 315);
             this.rtbOut.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.rtbOut.Name = "rtbOut";
-            this.rtbOut.Size = new System.Drawing.Size(508, 428);
+            this.rtbOut.Size = new System.Drawing.Size(508, 412);
             this.rtbOut.TabIndex = 3;
             this.rtbOut.Text = "";
             this.toolTipInfo.SetToolTip(this.rtbOut, "Code result, copy and past to your pokitto project.");
@@ -151,7 +153,7 @@
             this.gbBitMode.Name = "gbBitMode";
             this.gbBitMode.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel2.SetRowSpan(this.gbBitMode, 3);
-            this.gbBitMode.Size = new System.Drawing.Size(247, 137);
+            this.gbBitMode.Size = new System.Drawing.Size(247, 131);
             this.gbBitMode.TabIndex = 5;
             this.gbBitMode.TabStop = false;
             this.gbBitMode.Text = "Bit Mode";
@@ -217,7 +219,7 @@
             this.lbPalette.Location = new System.Drawing.Point(3, 17);
             this.lbPalette.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.lbPalette.Name = "lbPalette";
-            this.lbPalette.Size = new System.Drawing.Size(241, 264);
+            this.lbPalette.Size = new System.Drawing.Size(241, 254);
             this.lbPalette.TabIndex = 6;
             this.toolTipInfo.SetToolTip(this.lbPalette, "Show actual palette (Drag and drop to reorder)");
             this.lbPalette.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.lbPalette_DrawItem);
@@ -260,12 +262,12 @@
             // 
             this.groupBox1.Controls.Add(this.lbPalette);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(3, 143);
+            this.groupBox1.Location = new System.Drawing.Point(3, 137);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel2.SetRowSpan(this.groupBox1, 6);
-            this.groupBox1.Size = new System.Drawing.Size(247, 283);
+            this.groupBox1.Size = new System.Drawing.Size(247, 273);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Palette";
@@ -273,7 +275,7 @@
             // btnIndexes
             // 
             this.btnIndexes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnIndexes.Location = new System.Drawing.Point(256, 378);
+            this.btnIndexes.Location = new System.Drawing.Point(256, 362);
             this.btnIndexes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnIndexes.Name = "btnIndexes";
             this.btnIndexes.Size = new System.Drawing.Size(248, 48);
@@ -286,10 +288,10 @@
             // btnLoadPaletteJson
             // 
             this.btnLoadPaletteJson.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnLoadPaletteJson.Location = new System.Drawing.Point(256, 237);
+            this.btnLoadPaletteJson.Location = new System.Drawing.Point(256, 227);
             this.btnLoadPaletteJson.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLoadPaletteJson.Name = "btnLoadPaletteJson";
-            this.btnLoadPaletteJson.Size = new System.Drawing.Size(248, 43);
+            this.btnLoadPaletteJson.Size = new System.Drawing.Size(248, 41);
             this.btnLoadPaletteJson.TabIndex = 10;
             this.btnLoadPaletteJson.Text = "Load palette from json..";
             this.toolTipInfo.SetToolTip(this.btnLoadPaletteJson, "Load palette from saved json");
@@ -299,10 +301,10 @@
             // btnLoadPaletteImg
             // 
             this.btnLoadPaletteImg.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnLoadPaletteImg.Location = new System.Drawing.Point(256, 143);
+            this.btnLoadPaletteImg.Location = new System.Drawing.Point(256, 137);
             this.btnLoadPaletteImg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLoadPaletteImg.Name = "btnLoadPaletteImg";
-            this.btnLoadPaletteImg.Size = new System.Drawing.Size(248, 43);
+            this.btnLoadPaletteImg.Size = new System.Drawing.Size(248, 41);
             this.btnLoadPaletteImg.TabIndex = 11;
             this.btnLoadPaletteImg.Text = "Load image as palette..";
             this.toolTipInfo.SetToolTip(this.btnLoadPaletteImg, "Load an image and use all colors as palette");
@@ -312,10 +314,10 @@
             // btnSavePaletteJson
             // 
             this.btnSavePaletteJson.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSavePaletteJson.Location = new System.Drawing.Point(256, 284);
+            this.btnSavePaletteJson.Location = new System.Drawing.Point(256, 272);
             this.btnSavePaletteJson.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSavePaletteJson.Name = "btnSavePaletteJson";
-            this.btnSavePaletteJson.Size = new System.Drawing.Size(248, 43);
+            this.btnSavePaletteJson.Size = new System.Drawing.Size(248, 41);
             this.btnSavePaletteJson.TabIndex = 12;
             this.btnSavePaletteJson.Text = "Save palette as json..";
             this.toolTipInfo.SetToolTip(this.btnSavePaletteJson, "Save actual palette to json");
@@ -328,7 +330,7 @@
             this.btnExtractPalette.Location = new System.Drawing.Point(256, 2);
             this.btnExtractPalette.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExtractPalette.Name = "btnExtractPalette";
-            this.btnExtractPalette.Size = new System.Drawing.Size(248, 43);
+            this.btnExtractPalette.Size = new System.Drawing.Size(248, 41);
             this.btnExtractPalette.TabIndex = 14;
             this.btnExtractPalette.Text = "Extract Palette from image";
             this.toolTipInfo.SetToolTip(this.btnExtractPalette, "Extract an avarage palette from image");
@@ -339,10 +341,10 @@
             // 
             this.pbIndexed.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbIndexed.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbIndexed.Location = new System.Drawing.Point(516, 67);
+            this.pbIndexed.Location = new System.Drawing.Point(516, 92);
             this.pbIndexed.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pbIndexed.Name = "pbIndexed";
-            this.pbIndexed.Size = new System.Drawing.Size(508, 228);
+            this.pbIndexed.Size = new System.Drawing.Size(508, 219);
             this.pbIndexed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbIndexed.TabIndex = 1;
             this.pbIndexed.TabStop = false;
@@ -352,7 +354,7 @@
             // 
             this.numColumns.Dock = System.Windows.Forms.DockStyle.Fill;
             this.numColumns.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numColumns.Location = new System.Drawing.Point(3, 22);
+            this.numColumns.Location = new System.Drawing.Point(3, 45);
             this.numColumns.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numColumns.Minimum = new decimal(new int[] {
             1,
@@ -374,7 +376,7 @@
             // 
             this.numRow.Dock = System.Windows.Forms.DockStyle.Fill;
             this.numRow.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numRow.Location = new System.Drawing.Point(257, 22);
+            this.numRow.Location = new System.Drawing.Point(257, 45);
             this.numRow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.numRow.Minimum = new decimal(new int[] {
             1,
@@ -395,10 +397,10 @@
             // btnExtractPaletteAll
             // 
             this.btnExtractPaletteAll.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnExtractPaletteAll.Location = new System.Drawing.Point(256, 49);
+            this.btnExtractPaletteAll.Location = new System.Drawing.Point(256, 47);
             this.btnExtractPaletteAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnExtractPaletteAll.Name = "btnExtractPaletteAll";
-            this.btnExtractPaletteAll.Size = new System.Drawing.Size(248, 43);
+            this.btnExtractPaletteAll.Size = new System.Drawing.Size(248, 41);
             this.btnExtractPaletteAll.TabIndex = 17;
             this.btnExtractPaletteAll.Text = "Extract All Colors";
             this.toolTipInfo.SetToolTip(this.btnExtractPaletteAll, "Get all colors from image (Slow with many colors!)");
@@ -411,7 +413,7 @@
             this.btnReloadImage.Location = new System.Drawing.Point(256, 2);
             this.btnReloadImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReloadImage.Name = "btnReloadImage";
-            this.btnReloadImage.Size = new System.Drawing.Size(248, 55);
+            this.btnReloadImage.Size = new System.Drawing.Size(248, 38);
             this.btnReloadImage.TabIndex = 1;
             this.btnReloadImage.Text = "Reload Image";
             this.toolTipInfo.SetToolTip(this.btnReloadImage, "Reload image from disk");
@@ -434,7 +436,7 @@
             this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 90F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 35F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 65F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1027, 729);
@@ -454,7 +456,7 @@
             this.tableLayoutPanel2.Controls.Add(this.gbBitMode, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.btnSavePaletteJson, 1, 6);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 299);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 315);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 9;
@@ -467,7 +469,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 11.11111F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(507, 428);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(507, 412);
             this.tableLayoutPanel2.TabIndex = 19;
             // 
             // tableLayoutPanel3
@@ -484,16 +486,16 @@
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(508, 61);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(508, 86);
             this.tableLayoutPanel3.TabIndex = 20;
             // 
             // label1
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(96, 3);
+            this.label1.Location = new System.Drawing.Point(96, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 17);
             this.label1.TabIndex = 17;
@@ -503,7 +505,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(360, 3);
+            this.label2.Location = new System.Drawing.Point(360, 26);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 17);
             this.label2.TabIndex = 17;
@@ -516,13 +518,36 @@
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel4.Controls.Add(this.btnReloadImage, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.bntLoadImg, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.tbSpriteName, 1, 1);
+            this.tableLayoutPanel4.Controls.Add(this.label3, 0, 1);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 1;
+            this.tableLayoutPanel4.RowCount = 2;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(507, 59);
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(507, 84);
             this.tableLayoutPanel4.TabIndex = 21;
+            // 
+            // tbSpriteName
+            // 
+            this.tbSpriteName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tbSpriteName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbSpriteName.Location = new System.Drawing.Point(256, 45);
+            this.tbSpriteName.Name = "tbSpriteName";
+            this.tbSpriteName.Size = new System.Drawing.Size(248, 38);
+            this.tbSpriteName.TabIndex = 2;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(164, 54);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(86, 17);
+            this.label3.TabIndex = 17;
+            this.label3.Text = "Sprite Name";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // Form1
             // 
@@ -550,6 +575,7 @@
             this.tableLayoutPanel3.ResumeLayout(false);
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel4.ResumeLayout(false);
+            this.tableLayoutPanel4.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -590,6 +616,8 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.Button btnReloadImage;
         private System.Windows.Forms.RadioButton rb16;
+        private System.Windows.Forms.TextBox tbSpriteName;
+        private System.Windows.Forms.Label label3;
     }
 }
 
