@@ -105,6 +105,7 @@
             this.pbOriginal.TabIndex = 1;
             this.pbOriginal.TabStop = false;
             this.toolTipInfo.SetToolTip(this.pbOriginal, "Original image");
+            this.pbOriginal.Paint += new System.Windows.Forms.PaintEventHandler(this.pbOriginal_Paint);
             // 
             // rtbOut
             // 
@@ -349,6 +350,7 @@
             this.pbIndexed.TabIndex = 1;
             this.pbIndexed.TabStop = false;
             this.toolTipInfo.SetToolTip(this.pbIndexed, "Indexed image");
+            this.pbIndexed.Paint += new System.Windows.Forms.PaintEventHandler(this.pbIndexed_Paint);
             // 
             // numColumns
             // 

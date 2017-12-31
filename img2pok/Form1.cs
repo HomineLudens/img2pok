@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -189,12 +190,21 @@ namespace img2pok
 
         private List<ColorCount> ExtractBestPalette(Image bmp, int maxColors)
         {
-            Bitmap thumb = new Bitmap(32, 32);
+            Bitmap thumb;
+            if (bmp.Width > 32 || bmp.Height > 32)
+                thumb = new Bitmap(32, 32);
+            else
+                thumb = new Bitmap(bmp.Width, bmp.Height);
+
             using (var g = Graphics.FromImage(thumb))
             {
+                g.InterpolationMode = InterpolationMode.NearestNeighbor;
                 if (bmp != null)
                 {
-                    g.DrawImage(bmp, 0, 0, 32, 32);
+                    if (bmp.Width > 32 || bmp.Height > 32)
+                        g.DrawImage(bmp, 0, 0, 32, 32);
+                    else
+                        g.DrawImage(bmp, 0, 0);
                 }
             }
             var allPal = ExtractFullPalette(thumb);
@@ -564,6 +574,32 @@ namespace img2pok
             }
         }
 
+        private void DrawPictureBoxPixelPerfect(PictureBox pb, PaintEventArgs e)
+        {
+            e.Graphics.InterpolationMode = InterpolationMode.NearestNeighbor;
+            e.Graphics.Clear(pb.BackColor);
+            if (pb.Image != null)
+            {
+                Size sourceSize = pb.Image.Size;
+                Size targetSize = pb.Size;
+                float scale = Math.Min((float)targetSize.Width / sourceSize.Width, (float)targetSize.Height / sourceSize.Height);
+                var rect = new RectangleF();
+                rect.Width = scale * sourceSize.Width;
+                rect.Height = scale * sourceSize.Height;
+                rect.X = (targetSize.Width - rect.Width) / 2;
+                rect.Y = (targetSize.Height - rect.Height) / 2;
+                e.Graphics.DrawImage(pb.Image, rect);
+            }
+        }
 
+        private void pbIndexed_Paint(object sender, PaintEventArgs e)
+        {
+            DrawPictureBoxPixelPerfect((PictureBox)sender, e);
+        }      
+
+        private void pbOriginal_Paint(object sender, PaintEventArgs e)
+        {
+            DrawPictureBoxPixelPerfect((PictureBox)sender,e);
+        }
     }
 }
