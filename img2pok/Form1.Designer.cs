@@ -66,6 +66,7 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.tbSpriteName = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnSettings = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbOriginal)).BeginInit();
             this.cmsRtbOuput.SuspendLayout();
             this.gbBitMode.SuspendLayout();
@@ -86,7 +87,7 @@
             this.bntLoadImg.Location = new System.Drawing.Point(3, 2);
             this.bntLoadImg.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bntLoadImg.Name = "bntLoadImg";
-            this.bntLoadImg.Size = new System.Drawing.Size(247, 38);
+            this.bntLoadImg.Size = new System.Drawing.Size(163, 38);
             this.bntLoadImg.TabIndex = 0;
             this.bntLoadImg.Text = "Load Image..";
             this.toolTipInfo.SetToolTip(this.bntLoadImg, "Load original image");
@@ -118,6 +119,7 @@
             this.rtbOut.TabIndex = 3;
             this.rtbOut.Text = "";
             this.toolTipInfo.SetToolTip(this.rtbOut, "Code result, copy and past to your pokitto project.");
+            this.rtbOut.WordWrap = false;
             // 
             // cmsRtbOuput
             // 
@@ -412,10 +414,10 @@
             // btnReloadImage
             // 
             this.btnReloadImage.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnReloadImage.Location = new System.Drawing.Point(256, 2);
+            this.btnReloadImage.Location = new System.Drawing.Point(172, 2);
             this.btnReloadImage.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnReloadImage.Name = "btnReloadImage";
-            this.btnReloadImage.Size = new System.Drawing.Size(248, 38);
+            this.btnReloadImage.Size = new System.Drawing.Size(163, 38);
             this.btnReloadImage.TabIndex = 1;
             this.btnReloadImage.Text = "Reload Image";
             this.toolTipInfo.SetToolTip(this.btnReloadImage, "Reload image from disk");
@@ -515,13 +517,15 @@
             // 
             // tableLayoutPanel4
             // 
-            this.tableLayoutPanel4.ColumnCount = 2;
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel4.ColumnCount = 3;
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel4.Controls.Add(this.btnReloadImage, 1, 0);
             this.tableLayoutPanel4.Controls.Add(this.bntLoadImg, 0, 0);
             this.tableLayoutPanel4.Controls.Add(this.tbSpriteName, 1, 1);
             this.tableLayoutPanel4.Controls.Add(this.label3, 0, 1);
+            this.tableLayoutPanel4.Controls.Add(this.btnSettings, 2, 0);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
@@ -533,23 +537,35 @@
             // 
             // tbSpriteName
             // 
+            this.tableLayoutPanel4.SetColumnSpan(this.tbSpriteName, 2);
             this.tbSpriteName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tbSpriteName.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbSpriteName.Location = new System.Drawing.Point(256, 45);
+            this.tbSpriteName.Location = new System.Drawing.Point(172, 45);
             this.tbSpriteName.Name = "tbSpriteName";
-            this.tbSpriteName.Size = new System.Drawing.Size(248, 38);
+            this.tbSpriteName.Size = new System.Drawing.Size(332, 38);
             this.tbSpriteName.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(164, 54);
+            this.label3.Location = new System.Drawing.Point(80, 54);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 17);
             this.label3.TabIndex = 17;
             this.label3.Text = "Sprite Name";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // btnSettings
+            // 
+            this.btnSettings.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnSettings.Location = new System.Drawing.Point(341, 3);
+            this.btnSettings.Name = "btnSettings";
+            this.btnSettings.Size = new System.Drawing.Size(163, 36);
+            this.btnSettings.TabIndex = 18;
+            this.btnSettings.Text = "Settings";
+            this.btnSettings.UseVisualStyleBackColor = true;
+            this.btnSettings.Click += new System.EventHandler(this.btnSettings_Click);
             // 
             // Form1
             // 
@@ -620,6 +636,7 @@
         private System.Windows.Forms.RadioButton rb16;
         private System.Windows.Forms.TextBox tbSpriteName;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnSettings;
     }
 }
 

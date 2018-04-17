@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using img2pok.Properties;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -60,6 +61,15 @@ namespace img2pok
             LoadImage();
         }
 
+        private void btnSettings_Click(object sender, EventArgs e)
+        {
+            using (FormSettings fs = new FormSettings())
+            {
+                fs.ShowDialog();
+                ProcessImage();
+            }
+        }
+
         private void ProcessImage()
         {
             var originalImage = (Bitmap)pbOriginal.Image;
@@ -101,7 +111,6 @@ namespace img2pok
                             int wc = (int)(bmpIndexed.Width / numColumns.Value);
                             int hc = (int)(bmpIndexed.Height / numRow.Value);
                             int index = 0;
-
 
                             int size = 2 + (hc * (wc / (8 / numBit)));
                             OutputC += "//Sprite sheet:" + numColumns.Value + "x" + numRow.Value + "\r\n";
@@ -234,8 +243,6 @@ namespace img2pok
                     {
                         pixels[x, y] = 0;
                     }
-
-
                 }
             }
             return pixels;
@@ -275,7 +282,19 @@ namespace img2pok
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine("{");
-            sb.AppendLine(String.Format("{0},{1},", width, height));
+            sb.Append(String.Format("{0},{1},", width, height));
+
+            //-------------
+            if (Settings.Default.GroupDataInLine)
+            {
+                sb.Append(" ");
+            }
+            else
+            {
+                sb.AppendLine();
+                sb.AppendLine();
+            }
+            //-------------
 
             //Calc offset
             int offSet = 8 / numBit;
@@ -294,10 +313,24 @@ namespace img2pok
                             pc += pixels[x + (offSet - 1 - i), y] << numBit * i;
                         }
                     }
-                    line += pc + ",";
+                    if (Settings.Default.ShowDataHexOutput)
+                    {
+                        line += "0x" + pc.ToString("X") + ",";
+                    }
+                    else
+                    {
+                        line += pc + ",";
+                    }
                 }
-                sb.AppendLine(line);
+                //-------------
+                if (Settings.Default.GroupDataInLine)
+                    sb.Append(line + " ");
+                else
+                    sb.AppendLine(line);
+                //-------------
             }
+            if (Settings.Default.GroupDataInLine)
+                sb.AppendLine();
             sb.Append("}");
 
             return sb.ToString();
@@ -596,11 +629,12 @@ namespace img2pok
         private void pbIndexed_Paint(object sender, PaintEventArgs e)
         {
             DrawPictureBoxPixelPerfect((PictureBox)sender, e);
-        }      
+        }
 
         private void pbOriginal_Paint(object sender, PaintEventArgs e)
         {
-            DrawPictureBoxPixelPerfect((PictureBox)sender,e);
+            DrawPictureBoxPixelPerfect((PictureBox)sender, e);
         }
+
     }
 }
