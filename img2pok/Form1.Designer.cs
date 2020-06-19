@@ -360,6 +360,11 @@
             this.numColumns.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numColumns.Location = new System.Drawing.Point(3, 45);
             this.numColumns.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.numColumns.Maximum = new decimal(new int[] {
+            254,
+            0,
+            0,
+            0});
             this.numColumns.Minimum = new decimal(new int[] {
             1,
             0,
@@ -382,6 +387,11 @@
             this.numRow.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numRow.Location = new System.Drawing.Point(257, 45);
             this.numRow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.numRow.Maximum = new decimal(new int[] {
+            254,
+            0,
+            0,
+            0});
             this.numRow.Minimum = new decimal(new int[] {
             1,
             0,
